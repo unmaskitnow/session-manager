@@ -5,24 +5,12 @@
             "Effect": "Allow",
             "Action": [
                 "ssm:StartSession",
-                "ssm:SendCommand" 
+                "ssm:SendCommand"
             ],
             "Resource": [
                 "arn:aws:ec2:<REGION>:<ACCOUNT_ID>:instance/<INSTANCE_ID>",
-                "arn:aws:ssm:<REGION>:<ACCOUNT_ID>:document/SSM-SessionManagerRunShell" 
-            ],
-            "Condition": {
-                "BoolIfExists": {
-                    "ssm:SessionDocumentAccessCheck": "true" 
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ssm:GetDocument"
-            ],
-            "Resource": "arn:aws:ssm:<REGION>:<ACCOUNT_ID>:document/SSM-SessionManagerRunShell"
+                "arn:aws:ssm:*::document/AWS-StartPortForwardingSession"
+            ]
         },
         {
             "Effect": "Allow",
