@@ -5,11 +5,11 @@
             "Effect": "Allow",
             "Action": [
                 "ssm:StartSession",
-                "ssm:SendCommand"
+                "ssm:SendCommand"                                                        //For Session manager access from Amazon EC2 console
             ],
             "Resource": [
-                "arn:aws:ec2:<REGION>:<ACCOUNT_ID>:instance/<INSTANCE_ID>",
-                "arn:aws:ssm:*::document/AWS-StartPortForwardingSession"
+                "arn:aws:ec2:<REGION>:<ACCOUNT_ID>:instance/<INSTANCE_ID>",      
+                "arn:aws:ssm:*::document/AWS-StartPortForwardingSession"                //For Session Manager Port Forwarding Feature
             ]
         },
         {
